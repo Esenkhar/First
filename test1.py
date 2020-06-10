@@ -1,1 +1,3 @@
-print('test1')
+x = (i.upper() for i in 'spam')
+for i in x:
+    print(i)
