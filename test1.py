@@ -1,9 +1,6 @@
-try:
-    try:
-        print(1 / 0)
-    except Exception as x:
-        raise TypeError('Bad') from x
-except ZeroDivisionError as z:
-    print(z)
-except TypeError as t:
-    print(t)
+import decimal
+
+with decimal.localcontext() as ctx:
+    ctx.prec = 2;
+    print(decimal.Decimal('1.00') / decimal.Decimal('3.00'))
+print(decimal.Decimal('1.00') / decimal.Decimal('3.00'))
